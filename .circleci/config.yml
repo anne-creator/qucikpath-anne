@@ -21,7 +21,7 @@ jobs:
           name: Build
           command: |
             if [ $CIRCLE_BRANCH = 'circleci-project-setup' ]; then
-              CI = false && craco run build
+              CI = false && npm run build
             fi
       - persist_to_workspace:
           root: .
