@@ -6,6 +6,7 @@ import spectrum from '../../images/mockPicture/spectrum.svg';
 const Measurement = () => {
   const [clickedId, setClickedId] = useState(-1);
   const [selectedMeasurement, setSelectedMeasurement] = useState([]);
+  /*eslint-disable*/
   const [measurementsData, setMeasurementsData] = useState([
     {
       id: '403250801',
@@ -46,10 +47,7 @@ const Measurement = () => {
   useEffect(() => {
     const item = measurementsData.filter((item) => item.id === clickedId);
     setSelectedMeasurement(item);
-  }, [clickedId]);
-  useEffect(() => {
-    console.log(imgClickable);
-  }, [imgClickable]);
+  }, [clickedId, measurementsData]);
 
   const handleMeasurementClick = () => {
     setImgClickable(true);

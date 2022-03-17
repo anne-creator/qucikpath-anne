@@ -116,8 +116,8 @@ function CustomersTable({ selectedItems }) {
     },
   ];
 
-  const [selectAll, setSelectAll] = useState(false);
-  const [isCheck, setIsCheck] = useState([]);
+  // const [selectAll, setSelectAll] = useState(false);
+  // const [isCheck, setIsCheck] = useState([]);
   const [list, setList] = useState([]);
 
   useEffect(() => {
@@ -125,19 +125,19 @@ function CustomersTable({ selectedItems }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleClick = (e) => {
-    const { id, checked } = e.target;
-    setSelectAll(false);
-    setIsCheck([...isCheck, id]);
-    if (!checked) {
-      setIsCheck(isCheck.filter((item) => item !== id));
-    }
-  };
+  // const handleClick = (e) => {
+  //   const { id, checked } = e.target;
+  //   setSelectAll(false);
+  //   setIsCheck([...isCheck, id]);
+  //   if (!checked) {
+  //     setIsCheck(isCheck.filter((item) => item !== id));
+  //   }
+  // };
 
-  useEffect(() => {
-    selectedItems(isCheck);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isCheck]);
+  // useEffect(() => {
+  //   selectedItems(isCheck);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [isCheck]);
 
   return (
     <div className="bg-white shadow-lg rounded-sm border border-gray-200 relative">
@@ -197,8 +197,8 @@ function CustomersTable({ selectedItems }) {
                       location={customer.location}
                       status={customer.status}
                       fav={customer.fav}
-                      handleClick={handleClick}
-                      isChecked={isCheck.includes(customer.id)}
+                      // handleClick={handleClick}
+                      // isChecked={isCheck.includes(customer.id)}
                     />
                   );
                 })}
